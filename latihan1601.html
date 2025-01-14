@@ -26,6 +26,8 @@
         z-index: 1000;
         padding: 5px 0;
         font-size: 14px;
+        justify-content: center;
+        align-items: center;
       }
 
       .navbar-custom .navbar-nav .nav-link {
@@ -122,6 +124,25 @@
         margin-top: 40px;
       }
 
+      .container img{
+        display:block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      #page1 h2{
+        text-align: center;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+
+      #page1 p{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 30px;
+        display: flex;
+        text-align:justify;
+      }
+
       #page3 h2 {
         text-align: center;
         margin-top: 50px;
@@ -159,19 +180,10 @@
 
     <div class="container">
       <div id="page1" class="section active">
-        <div class="text-center"></div>
-
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner bingkai" id="sliderimg"></div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+        <h2><strong>- Selamat Datang di MieXplosion -</strong></h2>
+        <img src="Assets/Logo.jpeg" alt="Image with transparent background">
+        <br>
+        <p>-> Tempat di mana pengalaman makan mie jadi gak biasa! Mie itu udah jadi teman setia kita semua, apalagi mie instan yang praktis dan selalu jadi pilihan pas di setiap momen seru. Tapi di MieXplosion, setiap mangkuk mie jadi lebih spesial dengan kejutan rasa yang berani dan nggak terlupakan! Rasakan sensasi ledakan rasa yang bikin setiap suapan makin menggoda. MieXplosion : Makan Mie Ala Gen-Z, Rasakan Kehebohannya!!</p>
       </div>
 
       <div id="page2" class="section">
@@ -300,14 +312,6 @@
           success: function(dta) {
             $("#deskripsi").html(dta.deskripsi);
             $("#kopirig").html("Copyright 2025 &copy; " + dta.judul + " by " + dta.nama);
-            var slideimg = "";
-            dta.images.forEach(function(image, index) {
-              var aktif = index === 0 ? 'active' : '';
-              slideimg += `
-                <div class="carousel-item ${aktif}"><img src="${image.url}" class="d-block w-100" alt="${image.alt}"></div>
-              `;
-            });
-            $("#sliderimg").html(slideimg);
           },
           error: function(xhr, status, error) {
             console.log('Ajax Error: ', status, error);
